@@ -10,14 +10,15 @@ project(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
 # SOURCES
 set (
     SOURCES
+        bulk.cpp
         main.cpp
 )
 
 # HEADERS
-# set (
-#     HEADERS
-#        bulk.h
-# )
+set (
+    HEADERS
+        bulk.h
+)
 
 # EXECUTABLE
 add_executable(bulk ${SOURCES} ${HEADERS})

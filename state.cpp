@@ -3,7 +3,7 @@
 
 using namespace bulk;
 
-void StateStatic::processCommand(Handler *handler, const Cmd &cmd)
+void StateStatic::processCommand(const HandlerPtr &handler, const Cmd &cmd)
 {
     if (handler->cmdsSize() == 0) {
         handler->openLog();
@@ -20,12 +20,12 @@ void StateStatic::processCommand(Handler *handler, const Cmd &cmd)
     }
 }
 
-void StateStatic::processEof(Handler *handler)
+void StateStatic::processEof(const HandlerPtr &handler)
 {
     handler->processBulk();
 }
 
-void StateDynamic::processCommand(Handler *handler, const Cmd &cmd)
+void StateDynamic::processCommand(const HandlerPtr &handler, const Cmd &cmd)
 {
     if (handler->cmdsSize() == 0) {
         handler->openLog();
@@ -43,7 +43,7 @@ void StateDynamic::processCommand(Handler *handler, const Cmd &cmd)
     }
 }
 
-void StateDynamic::processEof(Handler *handler)
+void StateDynamic::processEof(const HandlerPtr &handler)
 {
     handler->closeLog();
 }

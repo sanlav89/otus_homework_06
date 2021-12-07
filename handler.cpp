@@ -17,12 +17,12 @@ void Handler::registerLog(log::LogPtr observer)
 
 void Handler::addCommand(const Cmd &cmd)
 {
-    m_state->processCommand(this, cmd);
+    m_state->processCommand(shared_from_this(), cmd);
 }
 
 void Handler::addCommandEof()
 {
-    m_state->processEof(this);
+    m_state->processEof(shared_from_this());
 }
 
 void Handler::setState(StateBasePtr state)

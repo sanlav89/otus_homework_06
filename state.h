@@ -4,36 +4,35 @@
 
 namespace bulk {
 
-class Handler;
-
-using HandlerPtr = std::shared_ptr<Handler>;
-
-class IState
+class StateBase
 {
 public:
-    virtual ~IState() = default;
-    virtual void processCommand(const HandlerPtr &handler, const Cmd &cmd) = 0;
-    virtual void processEof(const HandlerPtr &handler) = 0;
+    StateBase(const HandlerPtr &handler);
+    virtual ~StateBase() = default;
+    virtual void processCommand(const Cmd &cmd) = 0;
+    virtual void processEof() = 0;
+
+protected:
+    HandlerPtr m_handler;
 };
 
-
-class StateStatic : public IState
+class StateStatic : public StateBase
 {
 public:
-    StateStatic() = default;
-    void processCommand(const HandlerPtr &handler, const Cmd &cmd) override;
-    void processEof(const HandlerPtr &handler) override;
+    StateStatic(const HandlerPtr &handler);
+    void processCommand(const Cmd &cmd) override;
+    void processEof() override;
 };
 
-class StateDynamic : public IState
+class StateDynamic : public StateBase
 {
 public:
-    StateDynamic() = default;
-    void processCommand(const HandlerPtr &handler, const Cmd &cmd) override;
-    void processEof(const HandlerPtr &handler) override;
+    StateDynamic(const HandlerPtr &handler);
+    void processCommand(const Cmd &cmd) override;
+    void processEof() override;
 };
 
-using StateBasePtr = std::unique_ptr<IState>;
+using StateBasePtr = std::unique_ptr<StateBase>;
 
 }
 

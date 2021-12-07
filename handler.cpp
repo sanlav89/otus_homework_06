@@ -6,23 +6,23 @@ using namespace bulk;
 
 Handler::Handler(const size_t &bulkSize)
     : m_bulkSize(bulkSize)
-    , m_state(StateBasePtr{new StateStatic})
 {
+    m_state = StateBasePtr{new StateStatic(HandlerPtr(this))};
 }
 
 void Handler::registerLog(log::LogPtr observer)
 {
-    m_observers.emplace_back(std::move(observer));
+    m_logs.emplace_back(std::move(observer));
 }
 
 void Handler::addCommand(const Cmd &cmd)
 {
-    m_state->processCommand(shared_from_this(), cmd);
+    m_state->processCommand(cmd);
 }
 
 void Handler::addCommandEof()
 {
-    m_state->processEof(shared_from_this());
+    m_state->processEof();
 }
 
 void Handler::setState(StateBasePtr state)
@@ -77,7 +77,7 @@ void Handler::processBulk()
         os << std::endl;
     }
 
-    for (const auto &observer : m_observers) {
+    for (const auto &observer : m_logs) {
         observer->write(oss.str());
         observer->close();
     }
@@ -85,14 +85,14 @@ void Handler::processBulk()
 
 void Handler::closeLog()
 {
-    for (const auto &observer : m_observers) {
+    for (const auto &observer : m_logs) {
         observer->close();
     }
 }
 
 void Handler::openLog()
 {
-    for (const auto &observer : m_observers) {
+    for (const auto &observer : m_logs) {
         observer->open();
     }
 }

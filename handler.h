@@ -10,23 +10,20 @@
 
 namespace bulk {
 
-class Handler : public std::enable_shared_from_this<Handler>
+class Handler
 {
 public:
     Handler(const size_t &bulkSize);
     void registerLog(log::LogPtr obs);
-
     void addCommand(const Cmd &cmd);
     void addCommandEof();
     void setState(StateBasePtr state);
     size_t bulkSize() const;
     size_t cmdsSize() const;
     size_t bracketsSize() const;
-
     void pushOpenedBracket();
     void popOpenedBracket();
     void pushCmd(const Cmd &cmd);
-
     void processBulk();
     void openLog();
     void closeLog();
@@ -39,7 +36,7 @@ private:
     std::queue<Cmd> m_cmds;
     std::stack<Bracket> m_brackets;
     StateBasePtr m_state;
-    std::list<log::LogPtr> m_observers;
+    std::list<log::LogPtr> m_logs;
 
     static bool isAnyBracket(const Cmd &cmd, Bracket anyBracket);
 

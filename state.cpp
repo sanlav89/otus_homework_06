@@ -3,49 +3,59 @@
 
 using namespace bulk;
 
-void StateStatic::processCommand(const HandlerPtr &handler, const Cmd &cmd)
+StateBase::StateBase(const HandlerPtr &handler) : m_handler(handler)
 {
-    if (handler->cmdsSize() == 0) {
-        handler->openLog();
+}
+
+StateStatic::StateStatic(const HandlerPtr &handler) : StateBase(handler)
+{
+}
+
+void StateStatic::processCommand(const Cmd &cmd)
+{
+    if (m_handler->cmdsSize() == 0) {
+        m_handler->openLog();
     }
     if (Handler::isOpenedBracket(cmd)) {
-        handler->pushOpenedBracket();
-        handler->processBulk();
-        handler->setState(StateBasePtr{new StateDynamic});
+        m_handler->pushOpenedBracket();
+        m_handler->processBulk();
+        m_handler->setState(StateBasePtr{new StateDynamic(m_handler)});
     } else {
-        handler->pushCmd(cmd);
-        if (handler->cmdsSize() == handler->bulkSize()) {
-            handler->processBulk();
+        m_handler->pushCmd(cmd);
+        if (m_handler->cmdsSize() == m_handler->bulkSize()) {
+            m_handler->processBulk();
         }
     }
 }
 
-void StateStatic::processEof(const HandlerPtr &handler)
+void StateStatic::processEof()
 {
-    handler->processBulk();
+    m_handler->processBulk();
 }
 
-void StateDynamic::processCommand(const HandlerPtr &handler, const Cmd &cmd)
+StateDynamic::StateDynamic(const HandlerPtr &handler) : StateBase(handler)
 {
-    if (handler->cmdsSize() == 0) {
-        handler->openLog();
+}
+
+void StateDynamic::processCommand(const Cmd &cmd)
+{
+    if (m_handler->cmdsSize() == 0) {
+        m_handler->openLog();
     }
     if (Handler::isClosedBracket(cmd)) {
-        handler->popOpenedBracket();
-        if (handler->bracketsSize() == 0) {
-            handler->processBulk();
-            handler->setState(StateBasePtr{new StateStatic});
+        m_handler->popOpenedBracket();
+        if (m_handler->bracketsSize() == 0) {
+            m_handler->processBulk();
+            m_handler->setState(StateBasePtr{new StateStatic(m_handler)});
         }
     } else if (Handler::isOpenedBracket(cmd)) {
-        handler->pushOpenedBracket();
+        m_handler->pushOpenedBracket();
     } else {
-        handler->pushCmd(cmd);
+        m_handler->pushCmd(cmd);
     }
 }
 
-void StateDynamic::processEof(const HandlerPtr &handler)
+void StateDynamic::processEof()
 {
-    handler->closeLog();
+    m_handler->closeLog();
 }
-
-

@@ -18,6 +18,7 @@ public:
     BulkHandlerBase(BulkHandler *handler) : m_handler(handler) {}
     virtual ~BulkHandlerBase() = default;
     virtual void processCommand(const Cmd &cmd) = 0;
+    virtual void processEof() = 0;
 
 protected:
     BulkHandler *m_handler;
@@ -30,6 +31,7 @@ class BulkHandler
 public:
     BulkHandler(const size_t &bulkSize);
     void addCommand(const Cmd &cmd);
+    void addCommandEof();
     void setState(BulkHandlerBasePtr state);
     size_t bulkSize() const;
     size_t cmdsSize() const;
@@ -61,6 +63,7 @@ class StateStatic : public BulkHandlerBase
 public:
     StateStatic(BulkHandler *handler); //  : BulkHandlerBase(handler) {}
     void processCommand(const Cmd &cmd) override;
+    void processEof() override;
 };
 
 class StateDynamic : public BulkHandlerBase
@@ -68,6 +71,7 @@ class StateDynamic : public BulkHandlerBase
 public:
     StateDynamic(BulkHandler *handler); // : BulkHandlerBase(handler) {}
     void processCommand(const Cmd &cmd) override;
+    void processEof() override;
 };
 
 }

@@ -15,6 +15,11 @@ void BulkHandler::addCommand(const Cmd &cmd)
     m_state->processCommand(cmd);
 }
 
+void BulkHandler::addCommandEof()
+{
+    m_state->processEof();
+}
+
 void BulkHandler::setState(BulkHandlerBasePtr state)
 {
     m_state = std::move(state);
@@ -92,14 +97,19 @@ void StateStatic::processCommand(const Cmd &cmd)
 {
     if (BulkHandler::isOpenedBracket(cmd)) {
         m_handler->pushOpenedBracket();
-        m_handler->setState(BulkHandlerBasePtr{new StateDynamic(m_handler)});
         m_handler->processBulk();
+        m_handler->setState(BulkHandlerBasePtr{new StateDynamic(m_handler)});
     } else {
         m_handler->addCmdToQueue(cmd);
         if (m_handler->cmdsSize() == m_handler->bulkSize()) {
             m_handler->processBulk();
         }
     }
+}
+
+void StateStatic::processEof()
+{
+    m_handler->processBulk();
 }
 
 StateDynamic::StateDynamic(BulkHandler *handler) : BulkHandlerBase(handler)
@@ -114,7 +124,14 @@ void StateDynamic::processCommand(const Cmd &cmd)
             m_handler->processBulk();
             m_handler->setState(BulkHandlerBasePtr{new StateStatic(m_handler)});
         }
+    } else if (BulkHandler::isOpenedBracket(cmd)) {
+        m_handler->pushOpenedBracket();
     } else {
         m_handler->addCmdToQueue(cmd);
     }
+}
+
+void StateDynamic::processEof()
+{
+    // ignore
 }

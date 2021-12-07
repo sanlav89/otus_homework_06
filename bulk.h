@@ -2,48 +2,35 @@
 
 #include <stack>
 #include <queue>
-#include <string>
-#include <memory>
+#include <list>
+
+#include "log.h"
+#include "assignments.h"
+#include "state.h"
 
 namespace bulk {
 
-using Cmd = std::string;
-using Bracket = char;
-
-class BulkHandler;
-
-class BulkHandlerBase
+class Handler
 {
 public:
-    BulkHandlerBase(BulkHandler *handler) : m_handler(handler) {}
-    virtual ~BulkHandlerBase() = default;
-    virtual void processCommand(const Cmd &cmd) = 0;
-    virtual void processEof() = 0;
+    Handler(const size_t &bulkSize);
+    void registerLog(log::LogPtr obs);
 
-protected:
-    BulkHandler *m_handler;
-};
-
-using BulkHandlerBasePtr =  std::unique_ptr<BulkHandlerBase>;
-
-class BulkHandler
-{
-public:
-    BulkHandler(const size_t &bulkSize);
     void addCommand(const Cmd &cmd);
     void addCommandEof();
-    void setState(BulkHandlerBasePtr state);
+    void setState(StateBasePtr state);
     size_t bulkSize() const;
     size_t cmdsSize() const;
     size_t bracketsSize() const;
 
     void pushOpenedBracket();
     void popOpenedBracket();
-    void addCmdToQueue(const Cmd &cmd);
-    void processBulk();
+    void pushCmd(const Cmd &cmd);
 
-    static Bracket openedBracket() { return '{'; }
-    static Bracket closedBracket() { return '}'; }
+    void processBulk();
+    void openLog();
+    void closeLog();
+
     static bool isOpenedBracket(const Cmd &cmd);
     static bool isClosedBracket(const Cmd &cmd);
 
@@ -51,27 +38,11 @@ private:
     size_t m_bulkSize;
     std::queue<Cmd> m_cmds;
     std::stack<Bracket> m_brackets;
-    BulkHandlerBasePtr m_state;
+    StateBasePtr m_state;
+    std::list<log::LogPtr> m_observers;
 
     static bool isAnyBracket(const Cmd &cmd, Bracket anyBracket);
 
-
-};
-
-class StateStatic : public BulkHandlerBase
-{
-public:
-    StateStatic(BulkHandler *handler); //  : BulkHandlerBase(handler) {}
-    void processCommand(const Cmd &cmd) override;
-    void processEof() override;
-};
-
-class StateDynamic : public BulkHandlerBase
-{
-public:
-    StateDynamic(BulkHandler *handler); // : BulkHandlerBase(handler) {}
-    void processCommand(const Cmd &cmd) override;
-    void processEof() override;
 };
 
 }

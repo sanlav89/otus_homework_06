@@ -11,13 +11,19 @@ project(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
 set (
     SOURCES
         bulk.cpp
+        state.cpp
+        log.cpp
         main.cpp
 )
 
 # HEADERS
 set (
     HEADERS
+        assignments.h
         bulk.h
+        state.h
+        log.h
+
 )
 
 # EXECUTABLE

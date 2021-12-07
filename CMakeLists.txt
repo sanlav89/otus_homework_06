@@ -10,7 +10,7 @@ project(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
 # SOURCES
 set (
     SOURCES
-        bulk.cpp
+        handler.cpp
         state.cpp
         log.cpp
         main.cpp
@@ -20,7 +20,7 @@ set (
 set (
     HEADERS
         assignments.h
-        bulk.h
+        handler.h
         state.h
         log.h
 

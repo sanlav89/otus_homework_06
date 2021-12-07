@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-#include "bulk.h"
+#include "handler.h"
 
 int main(int argc, char *argv[])
 {

@@ -11,7 +11,6 @@ project(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
 set (
     SOURCES
         handler.cpp
-        handlercore.cpp
         state.cpp
         logger.cpp
         main.cpp
@@ -20,9 +19,8 @@ set (
 # HEADERS
 set (
     HEADERS
-        handler.h
         assignments.h
-        handlercore.h
+        handler.h
         state.h
         logger.h
 

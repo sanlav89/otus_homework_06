@@ -4,22 +4,24 @@
 
 namespace bulk {
 
+class Handler;
+
 class StateBase
 {
 public:
-    StateBase(const HandlerCorePtr &handler);
+    StateBase(Handler *handler);
     virtual ~StateBase() = default;
     virtual void processCommand(const Cmd &cmd) = 0;
     virtual void processEof() = 0;
 
 protected:
-    HandlerCorePtr m_handler;
+    Handler * m_handler;
 };
 
 class StateStatic : public StateBase
 {
 public:
-    StateStatic(const HandlerCorePtr &handler);
+    StateStatic(Handler *handler);
     void processCommand(const Cmd &cmd) override;
     void processEof() override;
 };
@@ -27,7 +29,7 @@ public:
 class StateDynamic : public StateBase
 {
 public:
-    StateDynamic(const HandlerCorePtr &handler);
+    StateDynamic(Handler *handler);
     void processCommand(const Cmd &cmd) override;
     void processEof() override;
 };

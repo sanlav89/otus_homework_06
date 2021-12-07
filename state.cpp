@@ -1,13 +1,13 @@
 #include "state.h"
-#include "handler.h"
+#include "handlercore.h"
 
 using namespace bulk;
 
-StateBase::StateBase(const HandlerPtr &handler) : m_handler(handler)
+StateBase::StateBase(const HandlerCorePtr &handler) : m_handler(handler)
 {
 }
 
-StateStatic::StateStatic(const HandlerPtr &handler) : StateBase(handler)
+StateStatic::StateStatic(const HandlerCorePtr &handler) : StateBase(handler)
 {
 }
 
@@ -16,7 +16,7 @@ void StateStatic::processCommand(const Cmd &cmd)
     if (m_handler->cmdsSize() == 0) {
         m_handler->openLog();
     }
-    if (Handler::isOpenedBracket(cmd)) {
+    if (HandlerCore::isOpenedBracket(cmd)) {
         m_handler->pushOpenedBracket();
         m_handler->processBulk();
         m_handler->setState(StateBasePtr{new StateDynamic(m_handler)});
@@ -33,7 +33,7 @@ void StateStatic::processEof()
     m_handler->processBulk();
 }
 
-StateDynamic::StateDynamic(const HandlerPtr &handler) : StateBase(handler)
+StateDynamic::StateDynamic(const HandlerCorePtr &handler) : StateBase(handler)
 {
 }
 
@@ -42,13 +42,13 @@ void StateDynamic::processCommand(const Cmd &cmd)
     if (m_handler->cmdsSize() == 0) {
         m_handler->openLog();
     }
-    if (Handler::isClosedBracket(cmd)) {
+    if (HandlerCore::isClosedBracket(cmd)) {
         m_handler->popOpenedBracket();
         if (m_handler->bracketsSize() == 0) {
             m_handler->processBulk();
             m_handler->setState(StateBasePtr{new StateStatic(m_handler)});
         }
-    } else if (Handler::isOpenedBracket(cmd)) {
+    } else if (HandlerCore::isOpenedBracket(cmd)) {
         m_handler->pushOpenedBracket();
     } else {
         m_handler->pushCmd(cmd);

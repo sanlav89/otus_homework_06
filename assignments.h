@@ -8,8 +8,8 @@ namespace bulk {
 using Cmd = std::string;
 using Bracket = char;
 
-class Handler;
-using HandlerPtr = std::shared_ptr<Handler>;
+class HandlerCore;
+using HandlerCorePtr = std::shared_ptr<HandlerCore>;
 
 }
 

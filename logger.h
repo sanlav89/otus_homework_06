@@ -3,18 +3,18 @@
 #include <fstream>
 #include <memory>
 
-namespace log {
+namespace logger {
 
-class Log
+class Logger
 {
 public:
-    virtual ~Log() = default;
+    virtual ~Logger() = default;
     virtual void open() = 0;
     virtual void close() = 0;
     virtual void write(const std::string &log) = 0;
 };
 
-class Console : public Log
+class Console : public Logger
 {
 public:
     Console() = default;
@@ -23,7 +23,7 @@ public:
     void write(const std::string &log) override;
 };
 
-class LogFile : public Log
+class LogFile : public Logger
 {
 public:
     LogFile() = default;
@@ -35,7 +35,7 @@ private:
     std::ofstream m_logFile;
 };
 
-using LogPtr = std::unique_ptr<Log>;
+using LogPtr = std::unique_ptr<Logger>;
 
 }
 

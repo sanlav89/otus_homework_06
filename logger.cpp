@@ -1,9 +1,9 @@
-#include "log.h"
+#include "logger.h"
 #include <iostream>
 #include <ctime>
 #include <sstream>
 
-using namespace log;
+using namespace logger;
 
 void Console::open()
 {

@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
     assert(bulkSize > 0);
 
     bulk::Handler handler(bulkSize);
-    handler.registerLog(log::LogPtr{new log::Console()});
-    handler.registerLog(log::LogPtr{new log::LogFile()});
+    handler.registerLogger(logger::LogPtr{new logger::Console()});
+    handler.registerLogger(logger::LogPtr{new logger::LogFile()});
 
     std::string cmd;
     while (std::getline(std::cin, cmd)) {

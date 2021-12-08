@@ -33,6 +33,7 @@ public:
 
 private:
     std::ofstream m_logFile;
+    std::string m_logFileName;
 };
 
 using LogPtr = std::unique_ptr<Logger>;

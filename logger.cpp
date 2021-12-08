@@ -7,12 +7,12 @@ using namespace logger;
 
 void Console::open()
 {
-    // ignore
+    // nothing to do
 }
 
 void Console::close()
 {
-    // ignore
+    // nothing to do
 }
 
 void Console::write(const std::string &log)
@@ -23,10 +23,10 @@ void Console::write(const std::string &log)
 void LogFile::open()
 {
     auto result = std::time(nullptr);
-    std::ostringstream oss;
-    std::ostream &os = oss;
-    os << "bulk" << result << ".log";
-    m_logFile.open(oss.str());
+    std::ostringstream ossFilename;
+    std::ostream &osFilename = ossFilename;
+    osFilename << "bulk" << result << ".log";
+    m_logFileName = ossFilename.str();
 }
 
 void LogFile::close()
@@ -38,7 +38,10 @@ void LogFile::close()
 
 void LogFile::write(const std::string &log)
 {
+    m_logFile.open(m_logFileName);
     if (m_logFile.is_open()) {
         m_logFile << log;
+    } else {
+        throw "Error! File " + m_logFileName + "is not opened";
     }
 }

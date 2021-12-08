@@ -5,7 +5,13 @@
 namespace bulk {
 
 class Handler;
-
+/**
+   digraph mygraphname {
+       state_a[label="a" shape=box];
+       state_b[label="b"]; // use default shape.
+       state_a->state_b[label="my transition"];
+   }
+*/
 class StateBase
 {
 public:

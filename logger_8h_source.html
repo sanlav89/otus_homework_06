@@ -100,12 +100,13 @@ $(function() {
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::ofstream m_logFile;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">   38</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">LogPtr</a> = std::unique_ptr&lt;Logger&gt;;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::string m_logFileName;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">   39</a></span><span class="keyword">using</span> <a class="code hl_typedef" href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">LogPtr</a> = std::unique_ptr&lt;Logger&gt;;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="ttc" id="aclasslogger_1_1_console_html"><div class="ttname"><a href="classlogger_1_1_console.html">logger::Console</a></div><div class="ttdef"><b>Definition:</b> logger.h:18</div></div>
 <div class="ttc" id="aclasslogger_1_1_console_html_a3a9d3c0b0d44456a9e6b6ee5d2fd732b"><div class="ttname"><a href="classlogger_1_1_console.html#a3a9d3c0b0d44456a9e6b6ee5d2fd732b">logger::Console::open</a></div><div class="ttdeci">void open() override</div><div class="ttdef"><b>Definition:</b> logger.cpp:8</div></div>
 <div class="ttc" id="aclasslogger_1_1_console_html_a49bd99c8382fae35d6b1f4a60f9ae0c5"><div class="ttname"><a href="classlogger_1_1_console.html#a49bd99c8382fae35d6b1f4a60f9ae0c5">logger::Console::close</a></div><div class="ttdeci">void close() override</div><div class="ttdef"><b>Definition:</b> logger.cpp:13</div></div>
@@ -122,7 +123,7 @@ $(function() {
 <div class="ttc" id="aclasslogger_1_1_logger_html_a752e9fa5688de00d3b671585c5adf942"><div class="ttname"><a href="classlogger_1_1_logger.html#a752e9fa5688de00d3b671585c5adf942">logger::Logger::close</a></div><div class="ttdeci">virtual void close()=0</div></div>
 <div class="ttc" id="aclasslogger_1_1_logger_html_ad763ef2fbc5c02354c8e56b0f9ece707"><div class="ttname"><a href="classlogger_1_1_logger.html#ad763ef2fbc5c02354c8e56b0f9ece707">logger::Logger::~Logger</a></div><div class="ttdeci">virtual ~Logger()=default</div></div>
 <div class="ttc" id="anamespacelogger_html"><div class="ttname"><a href="namespacelogger.html">logger</a></div><div class="ttdef"><b>Definition:</b> logger.h:6</div></div>
-<div class="ttc" id="anamespacelogger_html_a31eedef78dfddac699639a9b1db7e551"><div class="ttname"><a href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">logger::LogPtr</a></div><div class="ttdeci">std::unique_ptr&lt; Logger &gt; LogPtr</div><div class="ttdef"><b>Definition:</b> logger.h:38</div></div>
+<div class="ttc" id="anamespacelogger_html_a31eedef78dfddac699639a9b1db7e551"><div class="ttname"><a href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">logger::LogPtr</a></div><div class="ttdeci">std::unique_ptr&lt; Logger &gt; LogPtr</div><div class="ttdef"><b>Definition:</b> logger.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

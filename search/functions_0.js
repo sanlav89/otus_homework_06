@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addcommand_0',['addCommand',['../classbulk_1_1_handler.html#a917f5ecd865fcd273aa276aa4e18bae4',1,'bulk::Handler']]],
-  ['addcommandeof_1',['addCommandEof',['../classbulk_1_1_handler.html#a77a614d3fd208f8fe90a97a282eafbc0',1,'bulk::Handler']]]
+  ['bracketssize_0',['bracketsSize',['../classbulk_1_1_handler.html#aedcd7c090cffd78d5674534128acf468',1,'bulk::Handler']]],
+  ['bulksize_1',['bulkSize',['../classbulk_1_1_handler.html#ac70985486e6f7b4c307e72e9668239c1',1,'bulk::Handler']]]
 ];

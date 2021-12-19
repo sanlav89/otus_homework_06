@@ -4,9 +4,10 @@
 
 using namespace bulk;
 
-Handler::Handler(const size_t &bulkSize)
-    : m_bulkSize(bulkSize)
-    , m_state(StateBasePtr{new StateStatic(this)})
+Handler::Handler(const size_t &bulkSize, std::istream &is)
+    : m_is(is)
+    , m_bulkSize(bulkSize)
+    , m_state(StateBasePtr{new StateEmpty(this)})
 {
 }
 
@@ -15,14 +16,19 @@ void Handler::registerLogger(logger::LogPtr logger)
     m_loggers.emplace_back(std::move(logger));
 }
 
-void Handler::addCommand(const Cmd &cmd)
+void Handler::start()
 {
-    m_state->processCommand(cmd);
-}
-
-void Handler::addCommandEof()
-{
-    m_state->processEof();
+    std::string cmd;
+    while (std::getline(m_is, cmd)) {
+        if (isOpenedBracket(cmd)) {
+            m_state->cmdOpenedBracket();
+        } else if (isClosedBracket(cmd)) {
+            m_state->cmdClosedBracket();
+        } else {
+            m_state->cmdOther(cmd);
+        }
+    }
+    m_state->cmdEof();
 }
 
 void Handler::setState(StateBasePtr state)
@@ -62,30 +68,23 @@ void Handler::pushCmd(const Cmd &cmd)
 
 void Handler::processBulk()
 {
-    std::ostringstream oss;
-    std::ostream &os = oss;
+    std::ostringstream ossLog;
+    std::ostream &osLog = ossLog;
 
     if (!m_cmds.empty()) {
-        os << "bulk: ";
+        osLog << "bulk: ";
         while (!m_cmds.empty()) {
-            os << m_cmds.front();
+            osLog << m_cmds.front();
             m_cmds.pop();
             if (!m_cmds.empty()) {
-                os << ", ";
+                osLog << ", ";
             }
         }
-        os << std::endl;
+        osLog << std::endl;
     }
 
     for (const auto &observer : m_loggers) {
-        observer->write(oss.str());
-        observer->close();
-    }
-}
-
-void Handler::closeLog()
-{
-    for (const auto &observer : m_loggers) {
+        observer->write(ossLog.str());
         observer->close();
     }
 }
@@ -94,6 +93,13 @@ void Handler::openLog()
 {
     for (const auto &observer : m_loggers) {
         observer->open();
+    }
+}
+
+void Handler::closeLog()
+{
+    for (const auto &observer : m_loggers) {
+        observer->close();
     }
 }
 

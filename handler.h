@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <stack>
 #include <queue>
 #include <list>
@@ -12,14 +13,21 @@ namespace bulk {
 class Handler
 {
 public:
-    Handler(const size_t &bulkSize);
+
+    // High level logic
+    Handler(const size_t &bulkSize, std::istream &is = std::cin);
     void registerLogger(logger::LogPtr logger);
-    void addCommand(const Cmd &cmd);
-    void addCommandEof();
+    void start();
+
+    // State Pattern side
     void setState(StateBasePtr state);
+
+    // Properties
     size_t bulkSize() const;
     size_t cmdsSize() const;
     size_t bracketsSize() const;
+
+    // Handler functionality
     void pushOpenedBracket();
     void popOpenedBracket();
     void pushCmd(const Cmd &cmd);
@@ -27,16 +35,16 @@ public:
     void openLog();
     void closeLog();
 
-    static bool isOpenedBracket(const Cmd &cmd);
-    static bool isClosedBracket(const Cmd &cmd);
-
 private:
+    std::istream &m_is;
     size_t m_bulkSize;
     std::queue<Cmd> m_cmds;
     std::stack<Bracket> m_brackets;
     std::list<logger::LogPtr> m_loggers;
     StateBasePtr m_state;
 
+    static bool isOpenedBracket(const Cmd &cmd);
+    static bool isClosedBracket(const Cmd &cmd);
     static bool isAnyBracket(const Cmd &cmd, Bracket anyBracket);
 
 };

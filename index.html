@@ -93,8 +93,9 @@ $(function() {
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">bulk: cmd4, cmd5   </td><td class="markdownTableBodyNone">Конец ввода – принудительно завершаем блок.   </td></tr>
 </table>
 <p >Размер блока можно изменить динамически, если перед началом блока и сразу после дать команды <code>{</code> и <code>}</code> соответственно. Предыдущий пакет при этом принудительно завершается. Такие блоки могут быть включены друг в друга при этом вложенные команды <code>{</code> и <code>}</code> игнорируются (но не сами блоки). Если данные закончились внутри динамического блока, весь динамический блок игнорируется. <br  />
- Логика работы для динамического размера блоков (в примере N == 3): <br  />
 </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Логика работы для динамического размера блоков (в примере N == 3):</h1>
 <p >./bulk 3 <br  />
 </p>
 <table class="markdownTable">
@@ -149,16 +150,33 @@ $(function() {
 </table>
 <p >Вместе с выводом в консоль блоки должны сохранятся в отдельные файлы с именами bulk1517223860.log , где 1517223860 - это время получения первой команды из блока. По одному файлу на блок. <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Требования к реализации</h1>
 <p >Бинарный файл должен называться bulk. <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Проверка</h1>
 <p >Задание считается выполненным успешно, если после установки пакета и запуска с тестовыми данными вывод соответствует описанию. Данные подаются на стандартный вход построчно с паузой в 1 секунду для визуального контроля. <br  />
  Будет отмечена низкая связанность обработки данных, накопления пачек команд, вывода в консоль и сохранения в файлы. <br  />
- </p>
-</div></div><!-- PageDoc -->
+</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Build &amp; Run</h1>
+<div class="fragment"><div class="line">cd &lt;otus_homework_01_dir&gt;  </div>
+<div class="line">cmake . -DPATCH_VERSION=123  </div>
+<div class="line">cmake --build .  </div>
+<div class="line">cmake --build . --target test  </div>
+<div class="line">cmake --build . --target package  </div>
+<div class="line"># ./bulk 3  </div>
+<div class="line">cmd1  </div>
+<div class="line">cmd2  </div>
+<div class="line">cmd3  </div>
+<div class="line"># bulk: cmd1, cmd2, cmd3  </div>
+<div class="line">cmd4  </div>
+<div class="line">cmd5  </div>
+<div class="line">^D  </div>
+<div class="line"># bulk: cmd4, cmd5  </div>
+<div class="line"># </div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

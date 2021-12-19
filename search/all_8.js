@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['popopenedbracket_0',['popOpenedBracket',['../classbulk_1_1_handler.html#a7da517f31808fca9fadf47fd1ad3b85f',1,'bulk::Handler']]],
-  ['processbulk_1',['processBulk',['../classbulk_1_1_handler.html#a7d4c4331c4f4390b1a43102329c9fd7f',1,'bulk::Handler']]],
-  ['pushcmd_2',['pushCmd',['../classbulk_1_1_handler.html#aee7424b6aec07ed303e605014f504505',1,'bulk::Handler']]],
-  ['pushopenedbracket_3',['pushOpenedBracket',['../classbulk_1_1_handler.html#a07ec91eedbe7aab0e39abf28caf62aa3',1,'bulk::Handler']]]
+  ['logfile_0',['LogFile',['../classlogger_1_1_log_file.html#aa0139207209d66cbae6836e74c5317da',1,'logger::LogFile::LogFile()'],['../classlogger_1_1_log_file.html',1,'logger::LogFile']]],
+  ['logger_1',['logger',['../namespacelogger.html',1,'']]],
+  ['logger_2ecpp_2',['logger.cpp',['../logger_8cpp.html',1,'']]],
+  ['logger_2eh_3',['logger.h',['../logger_8h.html',1,'']]],
+  ['logptr_4',['LogPtr',['../namespacelogger.html#afd4f133a7ef04570d374fd87420b89e6',1,'logger']]]
 ];

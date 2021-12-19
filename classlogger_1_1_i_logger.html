@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>vector_editor: logger::Logger Class Reference</title>
+<title>vector_editor: logger::ILogger Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,24 +62,24 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacelogger.html">logger</a></li><li class="navelem"><a class="el" href="classlogger_1_1_logger.html">Logger</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacelogger.html">logger</a></li><li class="navelem"><a class="el" href="classlogger_1_1_i_logger.html">ILogger</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classlogger_1_1_logger-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">logger::Logger Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+<a href="classlogger_1_1_i_logger-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">logger::ILogger Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="logger_8h_source.html">logger.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for logger::Logger:</div>
+Inheritance diagram for logger::ILogger:</div>
 <div class="dyncontent">
-<div class="center"><img src="classlogger_1_1_logger__inherit__graph.png" border="0" usemap="#alogger_1_1_logger_inherit__map" alt="Inheritance graph"/></div>
-<map name="alogger_1_1_logger_inherit__map" id="alogger_1_1_logger_inherit__map">
-<area shape="rect" title=" " alt="" coords="76,5,179,32"/>
+<div class="center"><img src="classlogger_1_1_i_logger__inherit__graph.png" border="0" usemap="#alogger_1_1_i_logger_inherit__map" alt="Inheritance graph"/></div>
+<map name="alogger_1_1_i_logger_inherit__map" id="alogger_1_1_i_logger_inherit__map">
+<area shape="rect" title=" " alt="" coords="74,5,181,32"/>
 <area shape="rect" href="classlogger_1_1_console.html" title=" " alt="" coords="5,80,116,107"/>
 <area shape="rect" href="classlogger_1_1_log_file.html" title=" " alt="" coords="141,80,247,107"/>
 </map>
@@ -87,44 +87,16 @@ Inheritance diagram for logger::Logger:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad763ef2fbc5c02354c8e56b0f9ece707"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_logger.html#ad763ef2fbc5c02354c8e56b0f9ece707">~Logger</a> ()=default</td></tr>
-<tr class="separator:ad763ef2fbc5c02354c8e56b0f9ece707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b78e3dda38d7af5eeb2706cb650382e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_logger.html#a4b78e3dda38d7af5eeb2706cb650382e">open</a> ()=0</td></tr>
-<tr class="separator:a4b78e3dda38d7af5eeb2706cb650382e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752e9fa5688de00d3b671585c5adf942"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_logger.html#a752e9fa5688de00d3b671585c5adf942">close</a> ()=0</td></tr>
-<tr class="separator:a752e9fa5688de00d3b671585c5adf942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2987112c3611b0d234086d5a451f14"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_logger.html#a6a2987112c3611b0d234086d5a451f14">write</a> (const std::string &amp;log)=0</td></tr>
-<tr class="separator:a6a2987112c3611b0d234086d5a451f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab486219a61fbf781e07f50f88415cc4f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_i_logger.html#ab486219a61fbf781e07f50f88415cc4f">open</a> ()=0</td></tr>
+<tr class="separator:ab486219a61fbf781e07f50f88415cc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af1e1e2b1029303710f4fc9353ad361"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_i_logger.html#a1af1e1e2b1029303710f4fc9353ad361">close</a> ()=0</td></tr>
+<tr class="separator:a1af1e1e2b1029303710f4fc9353ad361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19193b790472e9ccc57ab582839bb912"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_i_logger.html#a19193b790472e9ccc57ab582839bb912">write</a> (const std::string &amp;log)=0</td></tr>
+<tr class="separator:a19193b790472e9ccc57ab582839bb912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad763ef2fbc5c02354c8e56b0f9ece707" name="ad763ef2fbc5c02354c8e56b0f9ece707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad763ef2fbc5c02354c8e56b0f9ece707">&#9670;&nbsp;</a></span>~Logger()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual logger::Logger::~Logger </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a752e9fa5688de00d3b671585c5adf942" name="a752e9fa5688de00d3b671585c5adf942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a752e9fa5688de00d3b671585c5adf942">&#9670;&nbsp;</a></span>close()</h2>
+<a id="a1af1e1e2b1029303710f4fc9353ad361" name="a1af1e1e2b1029303710f4fc9353ad361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af1e1e2b1029303710f4fc9353ad361">&#9670;&nbsp;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +105,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void logger::Logger::close </td>
+          <td class="memname">virtual void logger::ILogger::close </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -150,8 +122,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b78e3dda38d7af5eeb2706cb650382e" name="a4b78e3dda38d7af5eeb2706cb650382e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b78e3dda38d7af5eeb2706cb650382e">&#9670;&nbsp;</a></span>open()</h2>
+<a id="ab486219a61fbf781e07f50f88415cc4f" name="ab486219a61fbf781e07f50f88415cc4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab486219a61fbf781e07f50f88415cc4f">&#9670;&nbsp;</a></span>open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +132,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void logger::Logger::open </td>
+          <td class="memname">virtual void logger::ILogger::open </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -177,8 +149,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a2987112c3611b0d234086d5a451f14" name="a6a2987112c3611b0d234086d5a451f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a2987112c3611b0d234086d5a451f14">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a19193b790472e9ccc57ab582839bb912" name="a19193b790472e9ccc57ab582839bb912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19193b790472e9ccc57ab582839bb912">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +159,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void logger::Logger::write </td>
+          <td class="memname">virtual void logger::ILogger::write </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>log</em></td><td>)</td>

@@ -71,14 +71,16 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for logger.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="logger_8h__incl.png" border="0" usemap="#alogger_8h" alt=""/></div>
 <map name="alogger_8h" id="alogger_8h">
-<area shape="rect" title=" " alt="" coords="51,5,117,32"/>
+<area shape="rect" title=" " alt="" coords="97,5,164,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" title=" " alt="" coords="97,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="189,80,261,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -86,12 +88,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="logger_8h__dep__incl.png" border="0" usemap="#alogger_8hdep" alt=""/></div>
 <map name="alogger_8hdep" id="alogger_8hdep">
-<area shape="rect" title=" " alt="" coords="172,5,239,32"/>
-<area shape="rect" href="handler_8h.html" title=" " alt="" coords="117,80,192,107"/>
-<area shape="rect" href="logger_8cpp.html" title=" " alt="" coords="217,80,298,107"/>
-<area shape="rect" href="handler_8cpp.html" title=" " alt="" coords="5,155,93,181"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="117,155,192,181"/>
-<area shape="rect" href="state_8cpp.html" title=" " alt="" coords="216,155,291,181"/>
+<area shape="rect" title=" " alt="" coords="267,5,334,32"/>
+<area shape="rect" href="handler_8h.html" title=" " alt="" coords="213,80,287,107"/>
+<area shape="rect" href="logger_8cpp.html" title=" " alt="" coords="312,80,393,107"/>
+<area shape="rect" href="gtest__handler_8cpp.html" title=" " alt="" coords="5,155,129,181"/>
+<area shape="rect" href="handler_8cpp.html" title=" " alt="" coords="154,155,242,181"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="266,155,341,181"/>
+<area shape="rect" href="state_8cpp.html" title=" " alt="" coords="365,155,439,181"/>
 </map>
 </div>
 </div>
@@ -99,7 +102,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_logger.html">logger::Logger</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_i_logger.html">logger::ILogger</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger_1_1_console.html">logger::Console</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,8 +116,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a31eedef78dfddac699639a9b1db7e551"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a31eedef78dfddac699639a9b1db7e551">logger::LogPtr</a> = std::unique_ptr&lt; Logger &gt;</td></tr>
-<tr class="separator:a31eedef78dfddac699639a9b1db7e551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4f133a7ef04570d374fd87420b89e6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#afd4f133a7ef04570d374fd87420b89e6">logger::LogPtr</a> = std::unique_ptr&lt; ILogger &gt;</td></tr>
+<tr class="separator:afd4f133a7ef04570d374fd87420b89e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

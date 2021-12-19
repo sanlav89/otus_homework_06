@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['logfile_0',['LogFile',['../classlogger_1_1_log_file.html#aa0139207209d66cbae6836e74c5317da',1,'logger::LogFile::LogFile()'],['../classlogger_1_1_log_file.html',1,'logger::LogFile']]],
-  ['logger_1',['logger',['../namespacelogger.html',1,'']]],
-  ['logger_2',['Logger',['../classlogger_1_1_logger.html',1,'logger']]],
-  ['logger_2ecpp_3',['logger.cpp',['../logger_8cpp.html',1,'']]],
-  ['logger_2eh_4',['logger.h',['../logger_8h.html',1,'']]],
-  ['logptr_5',['LogPtr',['../namespacelogger.html#a31eedef78dfddac699639a9b1db7e551',1,'logger']]]
+  ['gmock_0',['gmock',['../_c_make_cache_8txt.html#a412b87ca3af2a858a4eddfe105257aa2',1,'CMakeCache.txt']]],
+  ['gnu_1',['gnu',['../_c_make_cache_8txt.html#af9e1a0c218af750c8e3abdb9f82684c5',1,'CMakeCache.txt']]],
+  ['gtest_2',['gtest',['../_c_make_cache_8txt.html#a62cbd18fdc725d7596b026f7a9bbd211',1,'CMakeCache.txt']]],
+  ['gtest_5fhandler_2ecpp_3',['gtest_handler.cpp',['../gtest__handler_8cpp.html',1,'']]]
 ];

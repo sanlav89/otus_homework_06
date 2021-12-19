@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['close_0',['close',['../classlogger_1_1_console.html#a49bd99c8382fae35d6b1f4a60f9ae0c5',1,'logger::Console::close()'],['../classlogger_1_1_log_file.html#a19278e76d81605f35244c3e9a679caeb',1,'logger::LogFile::close()'],['../classlogger_1_1_logger.html#a752e9fa5688de00d3b671585c5adf942',1,'logger::Logger::close()']]],
+  ['close_0',['close',['../classlogger_1_1_console.html#a49bd99c8382fae35d6b1f4a60f9ae0c5',1,'logger::Console::close()'],['../classlogger_1_1_log_file.html#a19278e76d81605f35244c3e9a679caeb',1,'logger::LogFile::close()'],['../classlogger_1_1_i_logger.html#a1af1e1e2b1029303710f4fc9353ad361',1,'logger::ILogger::close()']]],
   ['closelog_1',['closeLog',['../classbulk_1_1_handler.html#adbd2f206f76f8141caaa563718377660',1,'bulk::Handler']]],
   ['cmake_5fminimum_5frequired_2',['cmake_minimum_required',['../_c_make_lists_8txt.html#a0526c3b350130536664e4d293d66f5de',1,'CMakeLists.txt']]],
   ['cmdclosedbracket_3',['cmdClosedBracket',['../classbulk_1_1_state_static.html#a1861299b52ee1ff5af896164a49b5691',1,'bulk::StateStatic::cmdClosedBracket()'],['../classbulk_1_1_state_base.html#aca8fb1dc0abf768acff888b633b57640',1,'bulk::StateBase::cmdClosedBracket()'],['../classbulk_1_1_state_dynamic.html#a7f09aa62fd78bb2437a14ad6a1f7ec54',1,'bulk::StateDynamic::cmdClosedBracket()'],['../classbulk_1_1_state_empty.html#ab9e65b2eac9ecd9c9159832d1c91035e',1,'bulk::StateEmpty::cmdClosedBracket()']]],
@@ -8,5 +8,5 @@ var searchData=
   ['cmdopenedbracket_5',['cmdOpenedBracket',['../classbulk_1_1_state_base.html#aee90e2038fe6ef15b77a0bee2a4242b5',1,'bulk::StateBase::cmdOpenedBracket()'],['../classbulk_1_1_state_empty.html#ae8e69f54b620f5835a7fc7eb4f253dba',1,'bulk::StateEmpty::cmdOpenedBracket()'],['../classbulk_1_1_state_static.html#a586ae8901ed3923e4291e944f243204c',1,'bulk::StateStatic::cmdOpenedBracket()'],['../classbulk_1_1_state_dynamic.html#ad22ed14ad11ba422086054d590c9a06b',1,'bulk::StateDynamic::cmdOpenedBracket()']]],
   ['cmdother_6',['cmdOther',['../classbulk_1_1_state_base.html#a0847fe2150f2e5bfd58637a30712d688',1,'bulk::StateBase::cmdOther()'],['../classbulk_1_1_state_empty.html#a3bb4a34090cdae14215ef3ecb2ecf59f',1,'bulk::StateEmpty::cmdOther()'],['../classbulk_1_1_state_static.html#a74a3cc68c9a1d291b8b53f6751903467',1,'bulk::StateStatic::cmdOther()'],['../classbulk_1_1_state_dynamic.html#a9f6af1c2fa7835a524879dbc0362c598',1,'bulk::StateDynamic::cmdOther()']]],
   ['cmdssize_7',['cmdsSize',['../classbulk_1_1_handler.html#a4d5e2b98a3c45ee3b85f277bbbf5b39c',1,'bulk::Handler']]],
-  ['console_8',['Console',['../classlogger_1_1_console.html#ab4a9db45241539a78260b71154994f79',1,'logger::Console']]]
+  ['console_8',['Console',['../classlogger_1_1_console.html#a38b8ea51cca27ba9a67f8e82d6a58a16',1,'logger::Console']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['registerlogger_1',['registerLogger',['../classbulk_1_1_handler.html#a8940cf1e8ad8a2ebbb9abe3e51860058',1,'bulk::Handler']]]
+  ['m_5fhandler_0',['m_handler',['../classbulk_1_1_state_base.html#a16ae06012322671696fbe9a231719be9',1,'bulk::StateBase']]],
+  ['main_1',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]]
 ];

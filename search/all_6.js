@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_5fhandler_0',['m_handler',['../classbulk_1_1_state_base.html#a16ae06012322671696fbe9a231719be9',1,'bulk::StateBase']]],
-  ['main_1',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['handler_0',['Handler',['../classbulk_1_1_handler.html',1,'bulk::Handler'],['../classbulk_1_1_handler.html#aafff2c0a550a73fae9eebc9ebbe3bd51',1,'bulk::Handler::Handler()']]],
+  ['handler_2ecpp_1',['handler.cpp',['../handler_8cpp.html',1,'']]],
+  ['handler_2eh_2',['handler.h',['../handler_8h.html',1,'']]]
 ];

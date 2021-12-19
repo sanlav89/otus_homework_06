@@ -5,6 +5,10 @@
 
 using namespace logger;
 
+Console::Console(std::ostream &os) : m_os(os)
+{
+}
+
 void Console::open()
 {
     // nothing to do
@@ -17,7 +21,7 @@ void Console::close()
 
 void Console::write(const std::string &log)
 {
-    std::cout << log;
+    m_os << log;
 }
 
 void LogFile::open()

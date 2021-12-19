@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <memory>
+#include <iostream>
 
 namespace logger {
 
@@ -16,10 +17,12 @@ public:
 class Console : public ILogger
 {
 public:
-    Console() = default;
+    Console(std::ostream &os = std::cout);
     void open() override;
     void close() override;
     void write(const std::string &log) override;
+private:
+    std::ostream &m_os;
 };
 
 class LogFile : public ILogger

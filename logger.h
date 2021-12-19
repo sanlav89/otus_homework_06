@@ -5,16 +5,15 @@
 
 namespace logger {
 
-class Logger
+class ILogger
 {
 public:
-    virtual ~Logger() = default;
     virtual void open() = 0;
     virtual void close() = 0;
     virtual void write(const std::string &log) = 0;
 };
 
-class Console : public Logger
+class Console : public ILogger
 {
 public:
     Console() = default;
@@ -23,7 +22,7 @@ public:
     void write(const std::string &log) override;
 };
 
-class LogFile : public Logger
+class LogFile : public ILogger
 {
 public:
     LogFile() = default;
@@ -36,7 +35,7 @@ private:
     std::string m_logFileName;
 };
 
-using LogPtr = std::unique_ptr<Logger>;
+using LogPtr = std::unique_ptr<ILogger>;
 
 }
 
